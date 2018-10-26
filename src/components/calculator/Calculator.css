@@ -1,0 +1,108 @@
+*{
+    color: #4a4a4a;
+}
+
+.loader {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #008eff;
+    border-bottom: 3px solid #008eff;
+    width: 10px;
+    height: 10px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    display: inline-flex;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader--sum {
+    display: inline-block;
+}
+
+.select-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+.select-block__title {
+    font-size: 20px;
+    margin-right: 25px;
+    align-self: baseline;
+    padding-top: 4px;
+}
+
+.select-block__calc {
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.select-block__selector {
+    min-height: 40px;
+    border-radius: 5px;
+    padding-left: 8px;
+    background-color: #e5e5e5;
+    box-shadow: 0 0 2px 0 #525252;
+    font-size: 15px;
+    cursor: pointer;
+    width: 150px;
+}
+.select-block__choose-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-block {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.input-block__container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+
+}
+
+.input-block__input {
+    min-height: 35px;
+    padding-right: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 140px;
+    text-align: end;
+    border: 1px solid #9b9b9b;
+    outline: none;
+}
+
+.input-block__input:focus {
+    border-color: #70b2ef;
+    box-shadow: 0 0 3px 0 dimgrey;
+}
+
+.input-block__sum {
+    font-weight: bold;
+    font-size: 21px;
+    align-self: center;
+}
+
+.input-block__input::-webkit-inner-spin-button,
+.input-block__input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
