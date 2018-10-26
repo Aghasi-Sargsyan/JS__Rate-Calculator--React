@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Calculator.css";
+import LoadingDots from "../loading-dots/LoadingDots";
 
 export default class Calculator extends React.Component {
     constructor(props) {
@@ -37,7 +38,7 @@ export default class Calculator extends React.Component {
         if ((this.state.inputValue / this.state.exchangeRate) > 0) {
             return (this.state.inputValue / this.state.exchangeRate).toFixed(3)
         }
-        return <div className="loader loader--sum"/>;
+        return <LoadingDots/>;
     }
 
     componentDidMount() {

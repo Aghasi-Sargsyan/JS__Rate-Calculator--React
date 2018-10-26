@@ -5,20 +5,18 @@ export default class BitcoinRate extends React.Component {
     constructor(props) {
         super(props);
 
-        this.timer = null;
         this.loader = <div className="loader"/>;
         this.state = {
             bitcoinRate: this.loader
         };
 
         this.refreshBitcoinRate = this.refreshBitcoinRate.bind(this);
+        this.setBitcoinRate = this.setBitcoinRate.bind(this);
     }
 
     componentDidMount() {
         this.setBitcoinRate();
-        this.timer = setInterval(() => {
-            this.setBitcoinRate()
-        },180000);
+        this.timer = setInterval(this.setBitcoinRate, 180000);
     }
 
     componentWillUnmount() {
@@ -36,7 +34,9 @@ export default class BitcoinRate extends React.Component {
 
     setBitcoinRate() {
         this.fetchBitcoinRate()
-            .then(data => {this.setState({bitcoinRate: Object.values(data)[0]})})
+            .then(data => {
+                this.setState({bitcoinRate: Object.values(data)[0]})
+            })
     }
 
     refreshBitcoinRate() {
@@ -57,7 +57,8 @@ export default class BitcoinRate extends React.Component {
                             onClick={this.refreshBitcoinRate}>
                         Refresh
                     </button>
-                    <p className="bitcoin-block__update-txt">(BTC rate automatically will be updated every 3 minutes)</p>
+                    <p className="bitcoin-block__update-txt">(BTC rate automatically will be updated every 3
+                        minutes)</p>
                 </div>
             </div>
         );

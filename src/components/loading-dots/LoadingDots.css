@@ -1,0 +1,60 @@
+.loading-dots {
+    text-align: center;
+    z-index: 5;
+    display: inline-block;
+}
+
+.loading-dots .dot {
+    display: inline;
+    position: relative;
+    font-size: 25px;
+    color: black;
+    opacity: 0;
+    -webkit-animation: showHideDot 1.5s ease-in-out infinite;
+    animation: showHideDot 1.5s ease-in-out infinite;
+}
+
+.loading-dots .dot.one {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.loading-dots .dot.two {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.loading-dots .dot.three {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+@-webkit-keyframes showHideDot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes showHideDot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
